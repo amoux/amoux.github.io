@@ -2,9 +2,11 @@
 
 ---
 
-### I'm currently working on:
+### I'm currently working on the following projects:
 
-***david nlp-toolkit*** : ( `in-progress` )
+## david 
+
+**nlp-toolkit**
 
 > NLP toolkit for speeding data preparation for social-media texts.
 
@@ -68,7 +70,9 @@ most_similar("comment", k=7)  # most similar tokens to comment
 ```
 ---
 
-***david-sentiment*** : ( `in-progress` )
+## david-sentiment
+
+**Unsupervised sentiment model trained on YouTube Comments**
 
 > Training unsupervised sentiment models from social-media texts.
 
@@ -130,7 +134,9 @@ print(ytc_sentiment)
 ```
 ---
 
-***QAAM***  : ( `in-progress` )
+## QAAM
+
+**Question Answering Auto Model**
 
 > Automatic question answering engine from any text source.
 
