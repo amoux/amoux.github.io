@@ -1,5 +1,8 @@
 ## Portfolio
 
+- `most current thing to brag 😍`
+  - `david.tokenizer.Tokenizer`: I dont get attached to code but this `class` has taught me a lot about encoding and decoding (embeddings) and has saved me time. Which is currently being used in my most recent projects: `david, David-sentiment, and qaam`.
+
 ---
 
 ### I'm currently working on the following projects:
@@ -80,12 +83,12 @@ most_similar("comment", k=7)  # most similar tokens to comment
 from david_sentiment import YTCSentimentConfig, YTCSentimentModel
 import david_sentiment.dataset as ds
 
-config = YTCSentimentConfig(project_dir="ytc_sentiment",
+config = YTCSentimentConfig(project_dir="my-model", # project name
                             max_strlen=3000,
                             epochs=100,
                             enforce_ascii=True,
                             remove_urls=True,
-                            glove_ndim="100d",)  
+                            glove_ndim="100d")
 
 train_data, test_data = ds.ytcomments.split_train_test(3000, subset=0.8)
 x_train, y_labels, y_test = ds.fit_batch_to_dataset(train_data, config=config)
@@ -123,9 +126,9 @@ sm.save_project()
 ```python
 from david_sentiment import YTCSentimentConfig, YTCSentimentModel
 
-config = YTCSentimentConfig.load_project('ytc_sentiment/config.ini')
-ytc_sentiment = YTCSentimentModel(config)
-print(ytc_sentiment)
+config = YTCSentimentConfig.load_project('my-model/config.ini')
+sm = YTCSentimentModel(config)
+print(sm)
 ...
 '<YTCSentimentModel(max_seqlen=62, vocab_shape=(2552, 100))>'
 ```
