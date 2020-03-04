@@ -196,13 +196,12 @@ qaam.answer(question, render=True)
 
 ---
 
-### Other projects
+### FAQ
 
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
+- Can you help me with the frontend? No.
+- Can you help me with the backend? Yes.
+- Can you use library `x`? If its on python then yes `100%`
+- What about using other languages? If it gets the job done the I will use it.
 
 ---
 
