@@ -15,7 +15,9 @@
   - encoding-decoding tokenization based architecture (really happy about this one!)
   - loading/downloading pre-trained models and datasets utilities, e.g., GloVe, BERT, ..ect.
 
-The code snippet below is a small demo of some of the classes currently built (The project is currently in private, contact me to know more!)
+The code snippet below is a small demo of some of the classes currently built in `david`.
+
+> NOTE: *The project is currently in private, feel free to contact me to know more!*
 
 ```python
 import numpy as np
