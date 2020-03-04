@@ -17,8 +17,6 @@
 
 ```python
 from david.tokenizer import Tokenizer
-from david.datasets import YTCommentsDataset
-from david.models import GloVe
 from david.youtube import YTCommentScraper
 
 scraper = YTCommentScraper()
@@ -54,17 +52,30 @@ sm.save_project()
 from qaam import QAAM
 qaam = QAAM(0.2, metric='cosine', mode='tfidf')
 
-# simple and flexible api
+# after loading the texts - an instace of the all
+# the texts in the document or website is created
 qaam.texts_from_url('<WEBSITE_URL>')
 qaam.texts_from_doc(iterable_document)
 qaam.texts_from_str(string_sequences)
 
 # obtain all the entities from the document
 entities = qaam.common_entities(None, lower=True, lemma=True)
+...
+[('bert', 14),
+ ('nlp', 8),
+ ('google', 3),
+ ('glove', 2),
+ ('universal sentence encoder', 2), ...]
+ ```
+ 
+- Here is an example of how `BERTO` is corrected to the proper context-term `BERT` - before computing document similarity and passing the context to the `Tranformers Auto Model` for question answering.
 
-# after loading your texts the instance of that document/website is ready!
-qaam.answer("Why is this so easy to use?")
+```python
+qaam.answer("How was BERTO trained?", render=True)
+...
 ```
+<img src="images/pred2.png?raw=true"/>
+
 ---
 
 ### Other projects
