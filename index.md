@@ -171,7 +171,7 @@ qaam.answer("How was BERTO trained?", render=True)
 ```
 <img src="images/pred2.png?raw=true"/>
 
-- A word like food is correct, but it is not correct in terms of the document's context. Therefore, the word is automatically corrected to the most likely word based the document's vocabulary.
+- A word like food is correct, but it is not correct in terms of the document's context. Therefore, the word is automatically corrected to the most likely word based on the document's vocabulary.
 
 ```python
 question = "Why is it food to use pre-trained sentencr encoters?"
