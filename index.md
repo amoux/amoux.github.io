@@ -18,7 +18,7 @@ Most recent code achievements `david.tokenizer.Tokenizer()` 😍 - used in all t
 
 ### I'm currently working on the following projects:
 
-> NOTE: *The project is currently in private, feel free to contact me to know more!*
+> NOTE: *The projects are currently in private, feel free to contact me to know more!*
 
 ## david 
 
