@@ -99,7 +99,7 @@ sm.train_model(x_train, y_labels)
 sm.save_project()
 ```
 
-**sentiment-outputs** : Below is an example of how `TextBlob` sentiment method fails to recognize any polarity from the following texts (from youtube comments). 
+- **Notes on sentiment scores** : In the following output is an example of how `TextBlob's` ***rule-based*** sentiment method fails to recognize any polarity. On the other hand, the trained `CNN-LSTM` sentiment model gives us a spectrum of sentiments scores 👻
 
 ```
 💬 (Textblob=0.0, YTCSentimentModel=61.0681)
