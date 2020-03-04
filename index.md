@@ -1,7 +1,7 @@
 ## Portfolio
 
-- `most current thing to brag 😍`
-  - `david.tokenizer.Tokenizer`: I dont get attached to code but this `class` has taught me a lot about encoding and decoding (embeddings) and has saved me time. Which is currently being used in my most recent projects: `david, David-sentiment, and qaam`.
+
+Most recent code achievements `david.tokenizer.Tokenizer()` 😍 - used in all three projects below!
 
 ---
 
