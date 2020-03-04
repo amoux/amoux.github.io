@@ -137,7 +137,7 @@ print(ytc_sentiment)
 
 > Automatic question answering engine from any text source.
 
-How about asking questions to any blog or website with texts instead of manually scrolling?
+How about asking questions to any blog or website with texts instead of manually having to search and scroll to find exactly what you are looking for?
 
 - unique-features:
   - Both document-similarity and query-correction algorithms used are language-independent - meaning that they work for any language.
