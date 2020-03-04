@@ -1,5 +1,13 @@
 ## Portfolio
 
+- ***Casual Interests***:
+  - I use Linux at home and work.
+  - I like building and fixing any type of computer as a hobby. (I know most devs dont but you can ask me to fix your laptop, computer or server).
+  
+  **Serious Interests***
+  - Leveraging information extraction technology, particularly in NLP, to help people get answers to questions on broad and unstructured domains.
+  - Building data pipelines (IN => OUT).
+  - Implementing ML models to production pipelines.
 
 Most recent code achievements `david.tokenizer.Tokenizer()` 😍 - used in all three projects below!
 
