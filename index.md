@@ -4,22 +4,67 @@
 
 ### I'm currently working on:
 
-***david*** : ( `in-progress` )
+***david nlp-toolkit*** : ( `in-progress` )
 
-> NLP toolkit for speeding data preparation.
+> NLP toolkit for speeding data preparation for social-media texts.
 
+- features:
+  - text-pipelines
+  - text preprocessing, cleaning, normalization & extraction utilities
+  - social-media text-scrapers (currently only youtube-comments)
+  - encoding-decoding tokenization based architecture (really happy about this one!)
+  - loading/downloading pre-trained models and datasets utilities, e.g., GloVe, BERT, ..ect.
+
+```python
+from david.tokenizer import Tokenizer
+from david.datasets import YTCommentsDataset
+from david.models import GloVe
+from david.youtube import YTCommentScraper
+
+scraper = YTCommentScraper()
+iterbatch = scraper.scrape_comments_generator(video_id='<VIDEO_ID>')
+document = [comment['text'] for comment in iterbatch]
+
+tokenizer = Tokenizer(document=document)
+tokenizer.fit_vocabulary(mincount=2)
+sequences = tokenizer.document_to_sequences(document)
+tfidf_matrix = tokenizer.sequences_to_matrix(sequences, 'tfidf')
+
+```
 ---
 
-***david_sentiment*** : ( `in-progress` )
+***david-sentiment*** : ( `in-progress` )
 
 > Training unsupervised sentiment models from social-media texts.
 
+```python
+from david_sentiment import YTCSentimentConfig, YTCSentimentModel
+config = YTCSentimentConfig.load_project('my-model/config.ini')
+sm = YTCSentimentModel(config)
+sm.train_model()
+sm.save_project()
+```
 ---
 
 ***QAAM***  : ( `in-progress` )
 
 > Automatic question answering engine from any text source.
 
+```python
+from qaam import QAAM
+qaam = QAAM(0.2, metric='cosine', mode='tfidf')
+
+# simple and flexible api
+qaam.texts_from_url('<WEBSITE_URL>')
+qaam.texts_from_doc(iterable_document)
+qaam.texts_from_str(string_sequences)
+
+# obtain all the entities from the document
+entities = qaam.common_entities(None, lower=True, lemma=True)
+
+# after loading your texts the instance of that document/website is ready!
+qaam.answer("Why is this so easy to use?")
+```
 ---
 
 ### Other projects
