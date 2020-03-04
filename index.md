@@ -8,7 +8,7 @@
 
 **nlp-toolkit**
 
-> NLP toolkit for speeding data preparation for social-media texts.
+> NLP toolkit for speeding data preparation on raw (dirty-data 🤮) social-media text.
 
 - features:
   - Text-pipelines
@@ -72,7 +72,7 @@ most_similar("comment", k=7)  # most similar tokens to comment
 
 ## david-sentiment
 
-**Training unsupervised sentiment models from social-media texts**
+**Easily train unsupervised sentiment models of any size on any text with a few lines of code**
 
 > Below is a snippet of training an unsupervised sentiment model from scratch on comments scraped on YouTube.
 
