@@ -137,21 +137,24 @@ print(ytc_sentiment)
 
 > Automatic question answering engine from any text source.
 
+How about asking questions to any blog or website with texts instead of manually scrolling?
+
 - unique-features:
   - Both document-similarity and query-correction algorithms used are language-independent - meaning that they work for any language.
 
 - todos:
   - Adding support for all languages compatible with both `spaCy` and `Transformers`.
-  - Optimization with Cython implementation (currently testing)
+  - Cython implementation (currently testing 🤗)
 
 ```python
 from qaam import QAAM
 qaam = QAAM(0.2, metric='cosine', mode='tfidf')
 
-# after loading the texts - an instace of the all
-# the texts in the document or website is created
 blog_url = ("https://medium.com/analytics-vidhya/semantic-"
             "similarity-in-sentences-and-bert-e8d34f5a4677")
+ 
+# after passing the URL - the text content is properly
+# extracted, cleaned, and tokenized for you automatically!
 qaam.texts_from_url(blog_url)
 
 # obtain all the entities from the document
