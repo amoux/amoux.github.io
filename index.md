@@ -1,10 +1,13 @@
 ## Portfolio
 
+## Contact:
+- carlosdeveloper2@gmail.com
+
 - ***Casual Interests***:
   - I use Linux at home and work.
   - I like building and fixing any type of computer as a hobby. (I know most devs dont but you can ask me to fix your laptop, computer or server).
   
-  **Serious Interests***
+- **Serious Interests**
   - Leveraging information extraction technology, particularly in NLP, to help people get answers to questions on broad and unstructured domains.
   - Building data pipelines (IN => OUT).
   - Implementing ML models to production pipelines.
@@ -15,11 +18,13 @@ Most recent code achievements `david.tokenizer.Tokenizer()` 😍 - used in all t
 
 ### I'm currently working on the following projects:
 
+> NOTE: *The project is currently in private, feel free to contact me to know more!*
+
 ## david 
 
 **nlp-toolkit**
 
-> NLP toolkit for speeding data preparation on raw (dirty-data 🤮) social-media text.
+> NLP toolkit for speeding data preparation on raw social-media text.
 
 - features:
   - Text-pipelines
@@ -29,8 +34,6 @@ Most recent code achievements `david.tokenizer.Tokenizer()` 😍 - used in all t
   - Loading/downloading pre-trained models and datasets utilities, e.g., GloVe, BERT, ..ect.
 
 The code snippet below is a small demo of some of the classes currently built in `david`.
-
-> NOTE: *The project is currently in private, feel free to contact me to know more!*
 
 ```python
 import numpy as np
@@ -192,16 +195,16 @@ question = "Why is it food to use pre-trained sentencr encoters?"
 qaam.answer(question, render=True)
 ```
 
-<img src="images/pred1.png?raw=true"/>
+<img src="images/pred3.png?raw=true"/>
 
 ---
 
 ### FAQ
 
-- Can you help me with the frontend? No.
 - Can you help me with the backend? Yes.
-- Can you use library `x`? If its on python then yes `100%`
-- What about using other languages? If it gets the job done the I will use it.
+- What about frontend? No.
+- Can you use library `x`? If its on python - yes `100%`
+- What about using other languages? If its required to get the job done, absolutely.
 
 ---
 
