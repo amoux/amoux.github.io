@@ -29,11 +29,12 @@ from david.datasets import YTCommentsDataset
 dataset, _ = YTCommentsDataset.split_train_test(4000)
 
 # construct a Tokenizer object
-tokenizer = Tokenizer(remove_urls=True, reduce_length=True)
-tokenizer.fit_on_document(document=dataset)
-tokenizer.vocabulary_to_frequency(mincount=2)
-
-# embedd the vocabulary
+tokenizer = Tokenizer(document=dataset,
+                      remove_urls=True,
+                      reduce_length=True)
+                      
+# aling the vocabulary in relation to the term count/frequency
+tokenizer.fit_vocabulary(mincount=1)
 vocab_matrix = GloVe.fit_embeddings(tokenizer.vocab_index, vocab_dim="100d")
 
 def most_similar(word: str, k=5):
@@ -46,7 +47,7 @@ def most_similar(word: str, k=5):
     id2tok = {idx: tok for tok, idx in tokenizer.vocab_index.items()}
     return [(id2tok[i], dst[i]) for i in token_ids if i in id2tok][1: k+1]
     
-    
+
 most_similar("google", k=7)  # most similar tokens to google.
 [('facebook', 0.7516581668453545),
  ('internet', 0.7383222858698717),
@@ -72,11 +73,60 @@ most_similar("comment", k=7)  # most similar tokens to comment
 > Training unsupervised sentiment models from social-media texts.
 
 ```python
+from david.datasets import YTCommentsDataset
+
 from david_sentiment import YTCSentimentConfig, YTCSentimentModel
-config = YTCSentimentConfig.load_project('my-model/config.ini')
+import david_sentiment.dataset as ds
+
+config = YTCSentimentConfig(project_dir="ytc_sentiment",
+                            max_strlen=3000,
+                            epochs=100,
+                            enforce_ascii=True,
+                            remove_urls=True,
+                            glove_ndim="100d",)  
+
+train_data, test_data = YTCommentsDataset.split_train_test(3000, subset=0.8)
+x_train, y_labels, y_test = ds.fit_batch_to_dataset(train_data, config=config)
+
+# train the embedding model
 sm = YTCSentimentModel(config)
-sm.train_model()
+sm.train_model(x_train, y_labels)
+
+# save everything - this eliminates the necessity to
+# preprocess, tokenize and train everything again
 sm.save_project()
+```
+
+**sentiment-outputs** : Below is an example of how `TextBlob` sentiment method fails to recognize any polarity from the following texts (from youtube comments). 
+
+```
+💬 (Textblob=0.0, YTCSentimentModel=61.0681)
+  😑 - A BIG DEAL
+
+💬 (Textblob=0.0, YTCSentimentModel=78.5567)
+  😁 - Will you make a video on it ?
+
+💬 (Textblob=0.0, YTCSentimentModel=94.1769)
+  🤗 - we could hope to see in 2020??
+
+💬 (Textblob=0.0, YTCSentimentModel=47.5426)
+  😶 - Think about that.
+
+💬 (Textblob=0.0, YTCSentimentModel=97.6973)
+  😍 - Health, wealth and mind.
+```
+
+- Load and continue where you left off (both model & tokenizer instances are fully loaded):
+
+```python
+from david_sentiment import YTCSentimentConfig, YTCSentimentModel
+
+config = YTCSentimentConfig.load_project('ytc_sentiment/config.ini')
+ytc_sentiment = YTCSentimentModel(config)
+
+print(ytc_sentiment)
+'<YTCSentimentModel(max_seqlen=62, vocab_shape=(2552, 100))>'
+...
 ```
 ---
 
