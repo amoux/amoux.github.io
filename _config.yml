@@ -1,13 +1,16 @@
 title: Carlos A. Segura Diaz De Leon
 logo: "/images/thumbnail.jpg?raw=true"
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  Python Dev
+  Backend Python Developer
   <br><br>
   About:
+  <br><br>
   I am a hacker, creative-thinker and have a particular interest in natural-language-processing and machine-learning. While NLP is my pursuit - I love working on new domains where creative problem solving is needed.
   <br><br>
   Interests:
+  <br><br>
     Leveraging information extraction technology, particularly in NLP, to help people get answers to questions on broad and unstructured knowledge bases.
+  <br><br>
   <a href="https://www.linkedin.com/in/example/">LinkedIn</a> 
   
 theme: jekyll-theme-minimal
