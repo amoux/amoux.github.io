@@ -2,33 +2,35 @@
 
 ---
 
-### github projects
+### I'm currently working on:
 
-[david](/sample_page)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+***david*** : ( `in-progress` )
 
----
-[david_sentiment](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
----
-[QAAM](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+> NLP toolkit for speeding data preparation.
 
 ---
 
-### Category Name 2
+***david_sentiment*** : ( `in-progress` )
 
-- [david](http://example.com/)
-- [david-sentiment](http://example.com/)
-- [qaam](http://example.com/)
-- [lanka](http://example.com/)
-- [code-search](http://example.com/)
+> Training unsupervised sentiment models from social-media texts.
 
 ---
 
+***QAAM***  : ( `in-progress` )
 
+> Automatic question answering engine from any text source.
 
+---
+
+### Other projects
+
+- [Project 1 Title](http://example.com/)
+- [Project 2 Title](http://example.com/)
+- [Project 3 Title](http://example.com/)
+- [Project 4 Title](http://example.com/)
+- [Project 5 Title](http://example.com/)
+
+---
 
 ---
 <p style="font-size:11px"></p>
