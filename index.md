@@ -11,11 +11,11 @@
 > NLP toolkit for speeding data preparation for social-media texts.
 
 - features:
-  - text-pipelines
-  - text preprocessing, cleaning, normalization & extraction utilities
-  - social-media text-scrapers (currently only youtube-comments)
-  - encoding-decoding tokenization based architecture (really happy about this one!)
-  - loading/downloading pre-trained models and datasets utilities, e.g., GloVe, BERT, ..ect.
+  - Text-pipelines
+  - Text preprocessing, cleaning, normalization & extraction utilities
+  - Social-media text-scrapers (currently only youtube-comments)
+  - Encoding/decoding tokenization based architecture (really happy about this one!)
+  - Loading/downloading pre-trained models and datasets utilities, e.g., GloVe, BERT, ..ect.
 
 The code snippet below is a small demo of some of the classes currently built in `david`.
 
@@ -72,13 +72,11 @@ most_similar("comment", k=7)  # most similar tokens to comment
 
 ## david-sentiment
 
-**Unsupervised sentiment model trained on YouTube Comments**
+**Training unsupervised sentiment models from social-media texts**
 
-> Training unsupervised sentiment models from social-media texts.
+> Below is a snippet of training an unsupervised sentiment model from scratch on comments scraped on YouTube.
 
 ```python
-from david.datasets import YTCommentsDataset
-
 from david_sentiment import YTCSentimentConfig, YTCSentimentModel
 import david_sentiment.dataset as ds
 
@@ -89,7 +87,7 @@ config = YTCSentimentConfig(project_dir="ytc_sentiment",
                             remove_urls=True,
                             glove_ndim="100d",)  
 
-train_data, test_data = YTCommentsDataset.split_train_test(3000, subset=0.8)
+train_data, test_data = ds.ytcomments.split_train_test(3000, subset=0.8)
 x_train, y_labels, y_test = ds.fit_batch_to_dataset(train_data, config=config)
 
 # train the embedding model
@@ -127,10 +125,9 @@ from david_sentiment import YTCSentimentConfig, YTCSentimentModel
 
 config = YTCSentimentConfig.load_project('ytc_sentiment/config.ini')
 ytc_sentiment = YTCSentimentModel(config)
-
 print(ytc_sentiment)
-'<YTCSentimentModel(max_seqlen=62, vocab_shape=(2552, 100))>'
 ...
+'<YTCSentimentModel(max_seqlen=62, vocab_shape=(2552, 100))>'
 ```
 ---
 
@@ -139,6 +136,13 @@ print(ytc_sentiment)
 **Question Answering Auto Model**
 
 > Automatic question answering engine from any text source.
+
+- unique-features:
+  - Both document-similarity and query-correction algorithms used are language-independent - meaning that they work for any language.
+
+- todos:
+  - Adding support for all languages compatible with both `spaCy` and `Transformers`.
+  - Optimization with Cython implementation (currently testing)
 
 ```python
 from qaam import QAAM
@@ -164,9 +168,17 @@ entities = qaam.common_entities(None, lower=True, lemma=True)
 
 ```python
 qaam.answer("How was BERTO trained?", render=True)
-...
 ```
 <img src="images/pred2.png?raw=true"/>
+
+- A word like food is correct, but it is not correct in terms of the document's context. Therefore, the word is automatically corrected to the most likely word based the document's vocabulary.
+
+```python
+question = "Why is it food to use pre-trained sentencr encoters?"
+qaam.answer(question, render=True)
+```
+
+<img src="images/pred1.png?raw=true"/>
 
 ---
 
