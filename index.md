@@ -91,21 +91,22 @@ most_similar("comment", k=7)  # most similar tokens to comment
 > Below is a snippet of training an unsupervised sentiment model from scratch on comments scraped on YouTube.
 
 ```python
-from david_sentiment import YTCSentimentConfig, YTCSentimentModel
+from david.datasets import YTCommentsDataset
+from david_sentiment import SentimentConfig, SentimentModel
 import david_sentiment.dataset as ds
 
-config = YTCSentimentConfig(project_dir="my-model", # project name
-                            max_strlen=3000,
-                            epochs=100,
-                            enforce_ascii=True,
-                            remove_urls=True,
-                            glove_ndim="100d")
+config = SentimentConfig(project_dir="my-model", # project name
+                         max_strlen=3000,
+                         epochs=100,
+                         enforce_ascii=True,
+                         remove_urls=True,
+                         glove_ndim="100d")
 
-train_data, test_data = ds.ytcomments.split_train_test(3000, subset=0.8)
-x_train, y_labels, y_test = ds.fit_batch_to_dataset(train_data, config=config)
+train_data, test_data = YTCommentsDataset.split_train_test(3000, subset=0.8)
+x_train, y_labels, y_test = ds.batch_to_dataset(train_data, config=config)
 
 # train the embedding model
-sm = YTCSentimentModel(config)
+sm = SentimentModel(config)
 sm.train_model(x_train, y_labels)
 
 # save everything - this eliminates the necessity to
@@ -116,32 +117,32 @@ sm.save_project()
 - **Notes on sentiment scores** : In the following output is an example of how `TextBlob's` ***rule-based*** sentiment method fails to recognize any polarity. On the other hand, the trained `CNN-LSTM` sentiment model gives us a spectrum of sentiments scores 👻
 
 ```
-💬 (Textblob=0.0, YTCSentimentModel=61.0681)
+💬 (Textblob=0.0, SentimentModel=61.0681)
   😑 - A BIG DEAL
 
-💬 (Textblob=0.0, YTCSentimentModel=78.5567)
+💬 (Textblob=0.0, SentimentModel=78.5567)
   😁 - Will you make a video on it ?
 
-💬 (Textblob=0.0, YTCSentimentModel=94.1769)
+💬 (Textblob=0.0, SentimentModel=94.1769)
   🤗 - we could hope to see in 2020??
 
-💬 (Textblob=0.0, YTCSentimentModel=47.5426)
+💬 (Textblob=0.0, SentimentModel=47.5426)
   😶 - Think about that.
 
-💬 (Textblob=0.0, YTCSentimentModel=97.6973)
+💬 (Textblob=0.0, SentimentModel=97.6973)
   😍 - Health, wealth and mind.
 ```
 
 - Load and continue where you left off (both model & tokenizer instances are fully loaded):
 
 ```python
-from david_sentiment import YTCSentimentConfig, YTCSentimentModel
+from david_sentiment import SentimentConfig, SentimentModel
 
-config = YTCSentimentConfig.load_project('my-model/config.ini')
-sm = YTCSentimentModel(config)
+config = SentimentConfig.load_project('my-model/config.ini')
+sm = SentimentModel(config)
 print(sm)
 ...
-'<YTCSentimentModel(max_seqlen=62, vocab_shape=(2552, 100))>'
+'<SentimentModel(max_seqlen=62, vocab_shape=(2552, 100))>'
 ```
 ---
 
