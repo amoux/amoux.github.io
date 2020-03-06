@@ -1,6 +1,7 @@
-## Portfolio
+# Portfolio
 
-## Contact:
+## Contact
+
 - carlosdeveloper2@gmail.com
 
 - ***Casual Interests***:
@@ -20,7 +21,7 @@ Most recent code achievements `david.tokenizer.Tokenizer()` 😍 - used in all t
 
 > NOTE: *The projects are currently in private, feel free to contact me to know more!*
 
-## david 
+## david
 
 **nlp-toolkit**
 
@@ -48,8 +49,8 @@ dataset, _ = YTCommentsDataset.split_train_test(4000)
 tokenizer = Tokenizer(document=dataset,
                       remove_urls=True,
                       reduce_length=True)
-                      
-# aling the vocabulary in relation to the term count/frequency
+
+# align the vocabulary in relation to the term count/frequency
 tokenizer.fit_vocabulary(mincount=1)
 vocab_matrix = GloVe.fit_embeddings(tokenizer.vocab_index, vocab_dim="100d")
 
@@ -62,7 +63,6 @@ def most_similar(word: str, k=5):
     token_ids = np.argsort(-dst)
     id2tok = {idx: tok for tok, idx in tokenizer.vocab_index.items()}
     return [(id2tok[i], dst[i]) for i in token_ids if i in id2tok][1: k+1]
-    
 
 most_similar("google", k=7)  # most similar tokens to google.
 [('facebook', 0.7516581668453545),
@@ -82,11 +82,10 @@ most_similar("comment", k=7)  # most similar tokens to comment
  ('statements', 0.6972063046229513),
  ('suggestion', 0.6785569811078331)]
 ```
----
 
 ## david-sentiment
 
-**Easily train unsupervised sentiment models of any size on any text with a few lines of code**
+Easily train unsupervised sentiment models of any size on any text with a few lines of code
 
 > Below is a snippet of training an unsupervised sentiment model from scratch on comments scraped on YouTube.
 
@@ -116,7 +115,7 @@ sm.save_project()
 
 - **Notes on sentiment scores** : In the following output is an example of how `TextBlob's` ***rule-based*** sentiment method fails to recognize any polarity. On the other hand, the trained `CNN-LSTM` sentiment model gives us a spectrum of sentiments scores 👻
 
-```
+```python
 💬 (Textblob=0.0, SentimentModel=61.0681)
   😑 - A BIG DEAL
 
@@ -144,7 +143,6 @@ print(sm)
 ...
 '<SentimentModel(max_seqlen=62, vocab_shape=(2552, 100))>'
 ```
----
 
 ## QAAM
 
@@ -157,7 +155,7 @@ How about asking questions to any blog or website with texts instead of manually
 - unique-features:
   - Both document-similarity and query-correction algorithms used are language-independent - meaning that they work for any language.
 
-- todos:
+- todo:
   - Adding support for all languages compatible with both `spaCy` and `Transformers`.
   - Cython implementation (currently testing 🤗)
 
@@ -167,7 +165,7 @@ qaam = QAAM(0.2, metric='cosine', mode='tfidf')
 
 blog_url = ("https://medium.com/analytics-vidhya/semantic-"
             "similarity-in-sentences-and-bert-e8d34f5a4677")
- 
+
 # after passing the URL - the text content is properly
 # extracted, cleaned, and tokenized for you automatically!
 qaam.texts_from_url(blog_url)
@@ -181,12 +179,13 @@ entities = qaam.common_entities(None, lower=True, lemma=True)
  ('glove', 2),
  ('universal sentence encoder', 2), ...]
  ```
- 
-- Here is an example of how `BERTO` is corrected to the proper context-term `BERT` - before computing document similarity and passing the context to the `Tranformers Auto Model` for question answering.
+
+- Here is an example of how `BERTO` is corrected to the proper context-term `BERT` - before computing document similarity and passing the context to the `Transformers Auto Model` for question answering.
 
 ```python
 qaam.answer("How was BERTO trained?", render=True)
 ```
+
 <img src="images/pred2.png?raw=true"/>
 
 - A word like food is correct, but it is not correct in terms of the document's context. Therefore, the word is automatically corrected to the most likely word based on the document's vocabulary.
@@ -202,54 +201,66 @@ qaam.answer(question, render=True)
 
 # Artwork
 
-I hate frontend - I loose brain cells doing this crap - why is this so annoying.
+`<Add your quote here>`
 
-## Fountain-pen
+- types
+  - fountain-pen
+  - charcoal
 
-- dynamic patterns
+## class FountainPen
 
-<img src="artwork/brain_connections.jpg">
+> **DYNAMIC**
+
+<img src="artwork/brain_connections.jpg?raw=true"/>
+
 ---
 
-- equality
+> **EQUALITY**
 
-<img src="artwork/growth_pattern.jpg">
+<img src="artwork/growth_pattern.jpg?raw=true"/>
+
 ---
 
-- organic connections
+> **RADIANS**
 
-<img src="artwork/organic_connections.jpg">
+<img src="artwork/organic_connections.jpg?raw=true"/>
 
-## Charcoal
+## class Charcoal
 
-- linear flow
+> **LINEAR**
 
-<img src="artwork/flow.jpg">
+<img src="artwork/flow.jpg?raw=true"/>
+
 ---
 
-- abstraction weights
+> **WEIGHTS**
 
-<img src="artwork/weights.jpg">
+<img src="artwork/weights.jpg?raw=true"/>
+
 ---
 
-- perspective to mirror
+> **SELF**
 
-<img src="artwork/view_point.jpg">
+<img src="artwork/view_point.jpg?raw=true"/>
+
 ---
 
-- face shape
+> **DIM**
 
-<img src="artwork/shape.jpg">
+<img src="artwork/shape.jpg?raw=true"/>
+
 ---
 
-- face expression type-1
+> **EXPRESSION = 0.00320201**
 
-<img src="artwork/expression_type1.jpg">
+<img src="artwork/expression_type1.jpg?raw=true"/>
+
 ---
 
-- face expression type-3
+> **EXPRESSION = 0.3239020**
 
-<img src="artwork/expression_type3.jpg">
+<img src="artwork/expression_type3.jpg?raw=true"/>
+
 ---
 
 ### FAQ
@@ -258,8 +269,6 @@ I hate frontend - I loose brain cells doing this crap - why is this so annoying.
 - What about frontend? No.
 - Can you use library `x`? If its on python - yes `100%`
 - What about using other languages? If its required to get the job done, absolutely.
-
----
 
 ---
 <p style="font-size:11px"></p>
