@@ -206,32 +206,51 @@ I hate frontend - I loose brain cells doing this crap - why is this so annoying.
 
 ## Fountain-pen
 
+- dynamic patterns
+
 <img src="artwork/brain_connections.jpg">
-
 ---
+
+- equality
+
 <img src="artwork/growth_pattern.jpg">
-
 ---
+
+- organic connections
+
 <img src="artwork/organic_connections.jpg">
 
 ## Charcoal
 
+- linear flow
+
 <img src="artwork/flow.jpg">
-
 ---
+
+- abstraction weights
+
 <img src="artwork/weights.jpg">
-
 ---
-<img src="artwork/expression_type3.jpg">
 
----
+- perspective to mirror
+
 <img src="artwork/view_point.jpg">
-
 ---
+
+- face shape
+
 <img src="artwork/shape.jpg">
-
 ---
+
+- face expression type-1
+
 <img src="artwork/expression_type1.jpg">
+---
+
+- face expression type-3
+
+<img src="artwork/expression_type3.jpg">
+---
 
 ### FAQ
 
