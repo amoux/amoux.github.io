@@ -200,6 +200,39 @@ qaam.answer(question, render=True)
 
 ---
 
+# Artwork
+
+I hate frontend - I loose brain cells doing this crap - why is this so annoying.
+
+## Fountain-pen
+
+<img src="artwork/brain_connections.jpg">
+
+---
+<img src="artwork/growth_pattern.jpg">
+
+---
+<img src="artwork/organic_connections.jpg">
+
+## Charcoal
+
+<img src="artwork/flow.jpg">
+
+---
+<img src="artwork/weights.jpg">
+
+---
+<img src="artwork/expression_type3.jpg">
+
+---
+<img src="artwork/view_point.jpg">
+
+---
+<img src="artwork/shape.jpg">
+
+---
+<img src="artwork/expression_type1.jpg">
+
 ### FAQ
 
 - Can you help me with the backend? Yes.
